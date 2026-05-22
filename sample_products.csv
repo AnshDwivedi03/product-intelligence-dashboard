@@ -1,0 +1,5 @@
+sku_id,product_title,brand,category,price,mrp,availability,description,image_url,color,size,material
+SHOE001,Nike Blue Running Shoes,Nike,Shoes,3999,4999,in_stock,Lightweight running shoes for daily use.,https://via.placeholder.com/150,Blue,9,Mesh
+DRESS001,,Zara,Dresses,-100,2499,in_stock,Beautiful red dress.,https://via.placeholder.com/150,Red,M,Cotton
+BAG001,Puma Backpack,Puma,Bags,abc,1299,out_of_stock,Black backpack.,https://via.placeholder.com/150,Black,,
+WATCH001,Smart Watch,,,,5999,in_stock,Smart watch with health tracking.,,Black,,Silicone
