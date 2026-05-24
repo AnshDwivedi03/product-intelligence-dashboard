@@ -30,7 +30,7 @@ A full-stack, enterprise-grade web application built to help e-commerce sellers 
 
 ## 🔗 Deployment Links
 
-- **Live Application:** [Insert Vercel Deployment Link Here]
+- **Live Application:** (https://product-intelligence-dashboard-smoky.vercel.app/)
 - **Repository:** https://github.com/AnshDwivedi03/product-intelligence-dashboard
 
 ---
