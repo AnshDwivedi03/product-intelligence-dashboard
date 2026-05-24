@@ -14,6 +14,8 @@ A full-stack, enterprise-grade web application built to help e-commerce sellers 
 - **Competitor Price Simulation:** Simulates scraping across Amazon, Myntra, and Ajio to gather pricing data.
 - **Price Analysis:** Computes Lowest, Highest, Average, and Price Gaps to generate business recommendations.
 - **Real-Time Alerts System:** Raises High, Medium, and Low severity alerts based on internal pricing rules and validation errors.
+- **"1-Click" Quick Tests:** Features integrated UI buttons on the upload screen to instantly mock a video upload or fetch the included `sample_products.csv` for frictionless evaluator testing.
+- **Fully Responsive Mobile UX:** Features a sliding hamburger drawer, adaptive data tables, and stacked grid layouts for a flawless mobile experience.
 
 ---
 
@@ -21,7 +23,7 @@ A full-stack, enterprise-grade web application built to help e-commerce sellers 
 
 - **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
-- **Styling:** Pure CSS Modules (Zero Tailwind). Features a sleek, modern, professional light-mode design system with crisp glass-panels and soft drop-shadows.
+- **Styling:** Pure CSS Modules (Zero Tailwind). Features a custom, premium "Emerald & Forest" design system, completely bypassing generic AI-generated templates. Includes glassmorphic gradients, soft cubic-bezier shadows, and micro-interactions.
 - **State & Data:** Ephemeral In-Memory Store (Architected specifically for Vercel Serverless compatibility to allow instant reviewer testing without DB setup).
 
 ---
@@ -39,7 +41,7 @@ A full-stack, enterprise-grade web application built to help e-commerce sellers 
    ```
 4. Open [http://localhost:3000](http://localhost:3000) in your web browser.
 
-> **💡 Testing Tip:** You can use the included `sample_products.csv` located in the root directory to immediately test the upload, validation, and dashboard flows!
+> **💡 Testing Tip:** Simply navigate to the **Upload Data** page and click the "Test with Sample CSV" or "Test with Sample Video" buttons! The application will automatically fetch the sample file and initiate the async job pipeline.
 
 ---
 

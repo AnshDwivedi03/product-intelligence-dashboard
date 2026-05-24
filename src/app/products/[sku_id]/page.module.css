@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .skuBadge {
@@ -123,4 +124,23 @@
   border-radius: 6px;
   cursor: pointer;
   margin-top: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
 }

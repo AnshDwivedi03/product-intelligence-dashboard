@@ -11,18 +11,15 @@ export default function UploadPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const handleUpload = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!file) return;
-
+  const executeUpload = async (uploadFile: File) => {
     setLoading(true);
     setMessage('');
 
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('file', uploadFile);
     formData.append('enhanceTitle', enhanceTitle.toString());
 
-    const isCsv = file.name.endsWith('.csv');
+    const isCsv = uploadFile.name.endsWith('.csv');
     const endpoint = isCsv ? '/api/upload-products-csv' : '/api/upload-video';
 
     try {
@@ -45,6 +42,30 @@ export default function UploadPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleUpload = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!file) return;
+    await executeUpload(file);
+  };
+
+  const testCSV = async () => {
+    try {
+      setMessage('Downloading sample CSV...');
+      const res = await fetch('/sample_products.csv');
+      const blob = await res.blob();
+      const testFile = new File([blob], 'sample_products.csv', { type: 'text/csv' });
+      await executeUpload(testFile);
+    } catch (err) {
+      setMessage('Failed to load sample CSV.');
+    }
+  };
+
+  const testVideo = async () => {
+    const blob = new Blob(['dummy video content'], { type: 'video/mp4' });
+    const testFile = new File([blob], 'sample_video.mp4', { type: 'video/mp4' });
+    await executeUpload(testFile);
   };
 
   return (
@@ -86,6 +107,20 @@ export default function UploadPage() {
 
         {message && <div className={styles.message}>{message}</div>}
       </form>
+
+      <div className={styles.testActions}>
+        <div className={styles.testDivider}>
+          <span>OR QUICK TEST</span>
+        </div>
+        <div className={styles.testButtons}>
+          <button type="button" onClick={testCSV} disabled={loading} className={styles.secondaryBtn}>
+            Test with Sample CSV
+          </button>
+          <button type="button" onClick={testVideo} disabled={loading} className={styles.secondaryBtn}>
+            Test with Sample Video
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

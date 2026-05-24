@@ -94,9 +94,62 @@
 
 .message {
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+  text-align: center;
+  font-weight: 500;
+}
+
+.testActions {
+  margin-top: 2rem;
+  max-width: 600px;
+}
+
+.testDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.testDivider::before,
+.testDivider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.testDivider span {
+  padding: 0 1rem;
+}
+
+.testButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.secondaryBtn {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  background: var(--success-bg);
-  color: var(--success-color);
-  border: 1px solid var(--success-color);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.secondaryBtn:hover:not(:disabled) {
+  background-color: var(--bg-surface-hover);
+  border-color: #d1d5db;
+}
+
+.secondaryBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
